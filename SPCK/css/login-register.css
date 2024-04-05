@@ -1,0 +1,79 @@
+.outline{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+form{
+    background-color: white;
+    width: 30%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 2px solid orange;
+    background-color: rgb(52, 52, 52);
+    color: white;
+    font-family: 'Gillrgb(71, 71, 71) Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    border-radius: 25px;
+    
+}
+
+h1{
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+input{
+    padding: 10px 7px;
+    border: solid 1px grey;
+    border-radius: 5px;
+    margin: 10px 0;
+    background-color: rgb(52, 52, 52);
+    color: white;
+    font-weight: bolder;
+}
+
+input:focus{
+    background-color: rgb(35,35,35);
+    
+}
+
+button{
+    width: 35%;
+    padding: 10px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(213,121,40);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+button:hover{
+    background-color: rgb(154, 75, 6);
+    transition: 0.3s ease-in-out;
+}
+
+button:active{
+    background-color: rgb(93, 49, 11);
+    transition: 0s;
+}
+
+a{
+    color: white;
+    color: rgb(0, 208, 255);
+}
+
+a:hover{
+    color: rgb(0, 133, 162);
+    transition: 0.3s ease-in-out;
+}
+
