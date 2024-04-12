@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register page</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css//login-register.css">
+</head>
+
+<body>
+    <div id="outline">
+        <form id="register-form">
+            <h1>Register</h1>
+            <input type="text" name="userName" id="name" placeholder="Enter username">
+            <div id="username-error"></div>
+            <input type="text" name="email" id="email" placeholder="Enter email">
+            <div id="email-error"></div>
+            <input type="password" name="password" id="password" placeholder="Enter password">
+            <div id="password-error"></div>
+            <input type="password" name="confirmPassword" id="confirm-pasword" placeholder="Confirm password">
+            <div id="confirm-password-error"></div>
+            <button type="submit">Sign up</button>
+            <p>Already have an account? <a href="../html/login.html">Click here</a> or <a href="../html/home.html">Back
+                    to home</a></p>
+        </form>
+    </div>
+    
+
+    <script type="module" src="../js/firabase.js"></script>
+    <script type="module" src="../js/controller.js"></script>
+    
+</body>
+
+</html>
