@@ -1,4 +1,126 @@
-.carousel-item img{
-    width: 300px;
+#carouselExample{
+    width: 60%;
+    margin: auto;
+    margin-top: 100px;
+    color: black;
+    z-index:  1;
+}
 
+
+#carouselExample .carousel-inner .carousel-item img{
+    width: 50%;
+    height: 50%;
+
+}
+
+body{
+    background-color: #f9f9f9;
+}
+
+#nav{
+    z-index: 10;
+}
+
+#nav a{
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+/* description */
+
+.description{
+    padding: 50px 0;
+    width: 60%;
+    margin: auto;
+    
+}
+
+.description .title{
+    color: black;
+
+}
+
+.description .title h1{
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.description .information{
+    display: flex;
+    gap: 50px;
+    padding: 30px 5px;
+}
+
+.description .information > div{
+    display: flex;
+    flex-direction: column;
+}
+
+.description .information > div span{
+    color: rgba(255, 0, 0, 0.619);
+    font-size: 20px;
+    font-weight: 100;
+}
+
+/* illustrate */
+
+.illustrate{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 40px;
+}
+
+
+/* buy-rent */
+
+.buy-rent{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 100px;
+}
+
+.buy-rent >div{
+    display: flex;
+    gap: 40px;
+}
+
+.buy-rent button{
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.buy-rent #buy{
+    color: rgb(241, 143, 57);
+}
+
+.buy-rent #rent{
+    color: rgba(0, 115, 255, 0.738);
+}
+
+.buy-rent #wishlist{
+    color: red;
+}
+
+#buy:hover{
+    background-color: rgb(241, 143, 57);
+    transition: 0.3s ease-in-out;
+    color: rgb(87, 87, 87);
+}
+
+#rent:hover{
+    background-color: rgba(0, 115, 255, 0.738);
+    transition: 0.3s ease-in-out;
+    color: rgb(87, 87, 87);
+}
+
+#wishlist:hover{
+    background-color: red;
+    transition: 0.3s ease-in-out;
+    color: rgb(87, 87, 87);
 }

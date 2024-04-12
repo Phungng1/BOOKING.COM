@@ -3,8 +3,7 @@ console.log("ĐÂY LÀ CONTROLLER");
 //import cac ham den tu firebase de lap tirnh tinh nang xac thucj nguoi dung
 import{
     getAuth,
-} from 'https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js'
-
+} from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
 const auth = getAuth(app)
 
 const registerForm = document.getElementById("outline");
@@ -15,7 +14,7 @@ registerForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const dataSignUp = {
-        firstName: registerForm.userName.value.trim(),
+        userName: registerForm.userName.value.trim(),
         email: registerForm.email.value.trim(),
         password: registerForm.password.value,
         confirmPassword: registerForm.confirmPassword.value,
@@ -85,8 +84,7 @@ controller.register = (dataSignUp) => {
         document.getElementById("password-error").innerHTML = "Your password must contain number or a special character"
     }else {
         //Thoa man het yeu cau cua password
-        if(dataSignUp.firstName !== "" 
-        && dataSignUp.lastName !== "" 
+        if(dataSignUp.userName !== ""  
         && dataSignUp.email !== "" 
         && dataSignUp.password !== "" 
         && dataSignUp.confirmPassword !== ""){
