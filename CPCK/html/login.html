@@ -11,17 +11,17 @@
 
 <body>
     <div id="outline">
-        <form action="">
+        <form id="login-form">
             <h1>Login</h1>
-            <input type="text" id="name" placeholder="Enter username or email">
-            <input type="password" id="password" placeholder="Enter password">
-            <button>Sign in</button>
+            <input type="text" name="userNameOrEmail" id="email" placeholder="Enter email">
+            <input type="password" name="password" id="password" placeholder="Enter password">
+            <button type="submit">Sign in</button>
             <p>Not sign up yet? <a href="../html/register.html">Click here</a> or <a href="../html/home.html">Back to
                     home</a></p>
-
         </form>
     </div>
-
+    <script type="module" src="../js/login.js"></script>
+    <script type="module" src="../js/firebase.js"></script>
 </body>
 
 </html>

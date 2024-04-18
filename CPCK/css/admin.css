@@ -1,0 +1,15 @@
+.action a{
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+    padding: 10px 20px;
+    color: white;
+    background-color: rgb(231,121,40);
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+}
+
+.action a:hover{
+    background-color: rgb(153, 69, 5);
+}
