@@ -84,12 +84,17 @@ registerForm.addEventListener("submit", (event)=>{
     ).then((userCredential)=>{
         sendEmailVerification(userCredential.user)
         alert('User signed up')
-        .then(()=>{
+        .then((userCredential)=>{
             alert("Verification email sent")
+            sendEmailVerification(userCredential.user)
+            .then(()=>{
+                alert("Verification email sent")
+            }).catch((error)=>{
+                alert("There was an error" + error)
+            })
         }).catch((error)=>{
-        alert("There was this error:", error)
+        alert("There was an error:" + error)
         })
     })
     registerForm.reset() 
 })
-
