@@ -17,10 +17,44 @@ divNavbar.innerHTML += `
         
 `
 
+
+
+import { auth } from "./firebase.js"
+import { 
+    onAuthStateChange,
+} from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js"
+
 let divLoginRegister = document.getElementById("login-register")
 
+onAuthStateChange(auth, (user)=>{
+    if(!user){
+        divLoginRegister.innerHTML += `
+                <a href="../html/login.html" id="login">Login</a>
+                <a href="../html/register.html" id="register">Register</a>
+            `
+    }else{
+        divLoginRegister.innerHTML += `
+                <a href="../html/user.html" id="login">User</a>
+            `
+    }
 
-divLoginRegister.innerHTML += `
-    <a href="../html/login.html" id="login">Login</a>
-    <a href="../html/register.html" id="register">Register</a>
-`
+})
+
+
+// import { getAuth } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js"
+// const auth = getAuth()
+// const user = auth.currentUser
+
+// if (user = true){
+//     divLoginRegister.innerHTML += `
+//     <a href="../html/user.html" id="login">User</a>
+// `    
+// }else{
+
+//     divLoginRegister.innerHTML += `
+//         <a href="../html/login.html" id="login">Login</a>
+//         <a href="../html/register.html" id="register">Register</a>
+//     `
+// }
+
+

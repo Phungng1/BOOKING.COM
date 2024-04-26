@@ -71,7 +71,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 5px;
-    
+    border-radius: 12px;
     color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -84,6 +84,7 @@
 .box img {
     width: 100%;
     height: 80%;
+    border-radius: 12px;
 }
 
 .box figcaption{

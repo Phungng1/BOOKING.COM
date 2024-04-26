@@ -2,7 +2,7 @@ console.log("ĐÂY LÀ Register");
 
 //import cac ham den tu firebase de lap tirnh tinh nang xac thucj nguoi dung
 
-import { app, auth } from "./firebase.js"
+import { auth } from "./firebase.js"
 
 import {
     createUserWithEmailAndPassword,
@@ -98,3 +98,13 @@ registerForm.addEventListener("submit", (event)=>{
     })
     registerForm.reset() 
 })
+
+//Test currentUser and check user type (admin/user)
+import { getAuth } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js"
+const auth = getAuth()
+const user = auth.currentUser
+
+const type = auth.type
+
+console.log(user);
+console.log(type);

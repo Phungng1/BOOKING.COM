@@ -3,11 +3,11 @@ const rentButton = document.querySelector("#rent")
 const wishList = document.querySelector('#wishlist')
 
 buyButton.addEventListener('click', ()=>{
-    location.href = "../html/buy.html"
+    location.href = "../buy.html"
 })
 
 rentButton.addEventListener('click', ()=>{
-    location.href = "../html/rent.html"
+    location.href = "../rent.html"
 })
 
 wishList.addEventListener('click', ()=>{

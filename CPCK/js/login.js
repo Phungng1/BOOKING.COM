@@ -1,7 +1,7 @@
 import {
     signOut,
     signInWithEmailAndPassword,
-} from "https://www.gstatic.com/10.11.0/firebase-auth.js"
+} from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js"
 import { auth } from "./firebase.js"
 
 const loginForm = document.querySelector("#login-form")
@@ -12,7 +12,7 @@ loginForm.addEventListener("submit", (e) => {
     const email = loginForm.email.value.trim();
     const password = loginForm.password.value;
 
-    auth.signInWithEmailAndPassword(
+    signInWithEmailAndPassword(
         auth,
         email,
         password,
@@ -23,11 +23,11 @@ loginForm.addEventListener("submit", (e) => {
             signOut(auth);
             throw { code: "Email not verified", message: "" };
         }
-        location.href = "./home.html";
+        location.href = "./index.html";
     }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
         alert(errorCode);
-    });
+    })
 })

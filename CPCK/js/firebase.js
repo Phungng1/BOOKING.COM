@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-// import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+
 import { 
   getAuth,
 } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
