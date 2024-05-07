@@ -8,12 +8,9 @@
 </head>
 <body>
     <div id="nav"></div>
-    <div class="title">
-        <h1>profile</h1>
+    <div id="title"></div>
 
-    </div>
-
-    <div class="content">
+    <div id="content">
         <div class="user">
             <img src="../img/avatar.jpg" alt="">
             <div class="username">
@@ -23,19 +20,18 @@
         <div class="information">
             <div>
                 <h3>Email address</h3>
-                <p>user123456789@gmail.com</p>
+                <div id="user-email"></div>
             </div>
             <div>
                 <h3>Sign up date</h3>
-                <p>March 13th 2024</p>
+                <div id="sign-up-date"></div>
             </div>
             <div>
                 <h3>Status</h3>
-                <p>User</p>
+                <div id="user-type">Logged in</div>
             </div>
             <div class="action">
                 <button type="submit" id="logout-button">Logout</button>
-                
             </div>
         </div>
     </div>
@@ -45,7 +41,7 @@
 
 
     <script type="module" src="../js/firebase.js"></script>
-    <script src="../js/main.js"></script>
+    <script type="module" src="../js/main.js"></script>
     <script type="module" src="../js/user.js"></script>
 </body>
 </html>

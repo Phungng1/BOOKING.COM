@@ -211,6 +211,9 @@ form a:hover{
     transition: 0.3s ease-in-out;
 }
 
+.error{
+    color: red;
+}
 /* signup */
 .signup{
     background-image: url(../img/motel-sign-lit-night-077081332_prevstill.webp);

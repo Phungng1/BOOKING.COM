@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add room page</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css//login-register.css">
+</head>
+
+<body>
+    <div id="outline">
+        <form id="addroom-form">
+            <h1 style="font-size: 50px;">Accommodation info</h1>
+            <input type="text" name="title" id="title" placeholder="Name/Title">
+            <div id="title-error" class="error"></div>
+            <input type="text" name="location" id="location" placeholder="Location">
+            <div id="location-error" class="error"></div>
+            <input type="text" name="image" id="image" placeholder="Image address">
+            <div id="image-error" class="error"></div>
+            <button type="submit">Submit</button>
+            <a href="../html/room.html">Back</a>
+            
+        </form>
+    </div>
+    
+
+    <script type="module" src="../js/firebase.js"></script>
+    <script type="module" src="../js/addroom.js"></script>
+    
+</body>
+
+</html>

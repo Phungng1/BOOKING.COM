@@ -2,7 +2,7 @@ console.log("ĐÂY LÀ Register");
 
 //import cac ham den tu firebase de lap tirnh tinh nang xac thucj nguoi dung
 
-import { auth } from "./firebase.js"
+import { app, auth } from "./firebase.js"
 
 import {
     createUserWithEmailAndPassword,
@@ -11,61 +11,62 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 
 const controller = {}
-const registerForm = document.getElementById("register-form")
+const registerForm = document.querySelector("#register-form")
 const lowerCaseLetter = /[a-z]/g
 const upperCaseLetter = /[A-Z]/g
 const number = /[0-9]/g
 
-controller.register = (dataSignUp) =>{
-    //Check the username
-    if(dataSignUp.username == ""){
-        document.getElementById("username-error").innerText = "Please enter your username"
-    }else{
-        document.getElementById("username-error").innerText = ""
-    }
-    //Check the email
-    if(dataSignUp.email == ""){
-        document.getElementById("email-error").innerHTML = "Please enter your email address"
-    }else{
-        document.getElementById("email-error").innerText = ""
-    }
-    //Check the password
-    if(dataSignUp.password == ""){
-        document.getElementById("password-error").innerText = "Please enter a password"
-    }else{
-        document.getElementById("password-error").innerText = ""
-    }
-    //Check password confirmation
-    if(dataSignUp.confirmPassword !== dataSignUp.password){
-        document.getElementById("confirm-password-error").innerText = "The confirm password does not fit the password"
-    }else{
-        document.getElementById("confirm-password-error").innerText = ""
-    }
-    //Check password criteria
-    if(dataSignUp.password.length < 6){
-        document.getElementById("password-error").innerText = "Your password must be at least 6 characters long"
-    }else if(!dataSignUp.password.match(lowerCaseLetter)){
-        document.getElementById("password-error").innerText = "Your password must contain a lowercase letter"
-    }else if(!dataSignUp.password.match(upperCaseLetter)){
-        document.getElementById("password-error").innerText = "Your password must contain an uppercase letter"
-    }else if(!dataSignUp.password.match(number)){
-        document.getElementById("password-error").innerText = "Your password must contain a number"
-    }else{
-        if(
-            dataSignUp.username !== "" &&
-            dataSignUp.email !== "" &&
-            dataSignUp.password !== "" &&
-            dataSignUp.confirmPassword !== "" 
-
-        ){
-            return dataSignUp
-        }
-    }
-
-}
-
-registerForm.addEventListener("submit", (event)=>{
+registerForm.addEventListener("submit", (event) => {
     event.preventDefault()
+    controller.register = (dataSignUp) => {
+        //Check the username
+        if (dataSignUp.username == "") {
+            document.getElementById("username-error").innerText = "Please enter your username"
+        } else {
+            document.getElementById("username-error").innerText = ""
+        }
+        //Check the email
+        if (dataSignUp.email == "") {
+            document.getElementById("email-error").innerHTML = "Please enter your email address"
+        } else {
+            document.getElementById("email-error").innerText = ""
+        }
+        //Check the password
+        if (dataSignUp.password == "") {
+            document.getElementById("password-error").innerText = "Please enter a password"
+        } else {
+            document.getElementById("password-error").innerText = ""
+        }
+        //Check password confirmation
+        if (dataSignUp.confirmPassword !== dataSignUp.password) {
+            document.getElementById("confirm-password-error").innerText = "The confirm password does not fit the password"
+        } else {
+            document.getElementById("confirm-password-error").innerText = ""
+        }
+        //Check password criteria
+        if (dataSignUp.password.length < 6) {
+            document.getElementById("password-error").innerText = "Your password must be at least 6 characters long"
+        } else if (!dataSignUp.password.match(lowerCaseLetter)) {
+            document.getElementById("password-error").innerText = "Your password must contain a lowercase letter"
+        } else if (!dataSignUp.password.match(upperCaseLetter)) {
+            document.getElementById("password-error").innerText = "Your password must contain an uppercase letter"
+        } else if (!dataSignUp.password.match(number)) {
+            document.getElementById("password-error").innerText = "Your password must contain a number"
+        } else {
+            if (
+                dataSignUp.username !== "" &&
+                dataSignUp.email !== "" &&
+                dataSignUp.password !== "" &&
+                dataSignUp.confirmPassword !== ""
+
+            ) {
+                return dataSignUp
+            }
+        }
+
+    }
+
+
     const a = {
         username: registerForm.username.value.trim(),
         email: registerForm.email.value.trim(),
@@ -81,30 +82,23 @@ registerForm.addEventListener("submit", (event)=>{
         auth,
         dataSignUpInfo.email,
         dataSignUpInfo.password
-    ).then((userCredential)=>{
-        sendEmailVerification(userCredential.user)
-        alert('User signed up')
-        .then((userCredential)=>{
-            alert("Verification email sent")
-            sendEmailVerification(userCredential.user)
-            .then(()=>{
-                alert("Verification email sent")
-            }).catch((error)=>{
-                alert("There was an error" + error)
-            })
-        }).catch((error)=>{
-        alert("There was an error:" + error)
+    ).then((userCredential) => {
+        alert("Verification email sent")
+        const user = userCredential.user
+        sendEmailVerification(user)
+        .then(async (credential)=>{
+            const user = credential.user;
+            await user.emailVerified
+            window.location.href = "../html/home.html"
         })
+      
+    }).catch((error) => {
+        const errorMessage = error.message;
+        alert(errorMessage);
     })
-    registerForm.reset() 
+    registerForm.reset()
+
 })
 
-//Test currentUser and check user type (admin/user)
-import { getAuth } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js"
-const auth = getAuth()
-const user = auth.currentUser
+    
 
-const type = auth.type
-
-console.log(user);
-console.log(type);

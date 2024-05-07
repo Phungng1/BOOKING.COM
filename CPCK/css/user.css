@@ -1,8 +1,9 @@
 body{
     background-color: rgb(56, 56, 56);
+    
 }
 
-.title{
+#title{
     width: 50%;
     margin: auto;
 }
@@ -17,7 +18,7 @@ h1{
     font-size: 50px;
 }
 
-.content{
+#content{
     display: flex;
     width: 80%;
     margin: auto;
@@ -35,6 +36,7 @@ h1{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    
 }
 
 .user img{
@@ -51,8 +53,7 @@ h1{
     flex-direction: column;
     gap: 20px;
     color: white;
-}
-
+    font-family: 'Times New Roman', Times, serif;}
 button{
     text-align: center;
     width: fit-content;

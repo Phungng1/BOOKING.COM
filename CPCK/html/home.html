@@ -55,7 +55,7 @@
     </div>
     
     
-    <div class="signup">
+    <div class="signup" id="sign-up">
         <div class="outline">
 
             <div class="text">
@@ -65,14 +65,19 @@
                     accommodation</p>
             </div>
             <div class="form">
-                <form action="">
+                <form id="register-form">
                     <h1>Register</h1>
-                    <input type="text" id="name" placeholder="Enter username">
-                    <input type="text" id="email" placeholder="Enter email">
-                    <input type="password" id="password" placeholder="Enter password">
-                    <input type="password" id="confirm-pasword" placeholder="Confirm password">
-                    <button>Sign up</button>
-                    <p>Already have an account? <a href="../html/login.html">Click here</a></p>
+                    <input type="text" name="username" id="username" placeholder="Enter username">
+                    <div id="username-error" class="error"></div>
+                    <input type="text" name="email" id="email" placeholder="Enter email">
+                    <div id="email-error" class="error"></div>
+                    <input type="password" name="password" id="password" placeholder="Enter password">
+                    <div id="password-error" class="error"></div>
+                    <input type="password" name="confirmPassword" id="confirm-password" placeholder="Confirm password">
+                    <div id="confirm-password-error" class="error"></div>
+                    <button type="submit">Sign up</button>
+                    <p>Already have an account? <a href="../html/login.html">Login</a> or <a href="../html/home.html">Back
+                            to home</a></p>
                 </form>
             </div>
         </div>

@@ -23,11 +23,11 @@ loginForm.addEventListener("submit", (e) => {
             signOut(auth);
             throw { code: "Email not verified", message: "" };
         }
-        location.href = "./index.html";
+        location.href = "./home.html";
     }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
         alert(errorCode);
-    })
+    });
 })

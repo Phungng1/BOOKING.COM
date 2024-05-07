@@ -133,3 +133,6 @@ const hotel = [
 
 
 localStorage.setItem("hotel", JSON.stringify(hotel));
+
+
+

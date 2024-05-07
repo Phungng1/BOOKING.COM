@@ -7,7 +7,7 @@ for (let key of getHotel){
 
       divTrending.innerHTML += `
       
-      <figure class="box">
+      <a class="box" href="../room/jade.html">
                   <img src=${"../img/trending/" + key.image} alt="Not found">
                   <figcaption>
                     <h3>${key.title}</h3>
@@ -34,6 +34,7 @@ for (let key of getHotel){
 //     `
 //   }
 // }
+
 
 
 
