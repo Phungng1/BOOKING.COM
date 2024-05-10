@@ -14,6 +14,7 @@ import {
 const divAddRoomForm = document.getElementById("addroom-form");
 
 
+
 //Thêm phòng 
 const addRoom = async (title, location, image)=>{
     await addDoc(collection(db, "accommodation"), {
@@ -34,6 +35,7 @@ divAddRoomForm.addEventListener("submit", (e)=>{
   if(title !== "" && location !== "" && image !== ""){
         addRoom(title, location, image)
         alert("Room added")
+        window.open('../html/room.html') 
     }
    
 })
@@ -49,4 +51,5 @@ const deleteRoom = (id)=>{
         alert(error.message)
     })
 }
+
 
